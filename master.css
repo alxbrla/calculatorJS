@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "Gotham rounded";
+    src: url(./fonts/GothamRounded-Medium.otf) format(otf);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: "Gotham rounded", Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    border: 0;
+    background: linear-gradient(to right, #5ADBFF, #6adc45);
+}
+
+.calculator {
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    animation: drop 1.5s ease;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.calculator > button {
+    background-color: rgba(255, 255, 255, .75);
+    font-size: 2rem;
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+}
+
+.calculator > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.calculator > button:active {
+    background-color: #5ADBFF;
+}
+
+.calculator > button:after {
+    background-color: rgba(255, 255, 255, .75);;
+}
+
+.screen {
+    grid-column: 1/-1;
+    background-color: rgba(0, 0, 0, .9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previousOperand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.currentOperand {
+    color: rgba(255, 255, 255, .9);
+    font-size: 3rem;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .calculator {
+        min-height: 90vh;
+        grid-template-columns: repeat(4, 90px);
+        grid-template-rows: minmax(120px, auto) repeat(5, 90px);       
+    }
+    .calculator > button {
+        font-size: 1.5rem;
+    }
+
+    .previousOperand {
+        font-size: 1rem;
+    }
+    .currentOperand {
+        font-size: 2.5rem;
+    }
+}
