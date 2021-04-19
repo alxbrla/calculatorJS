@@ -2,4 +2,4 @@
 
 This is a simple calculator made in Html/CSS and JS
 
-You can try it at: [https://alexandru-burla.github.io/JSCalculator/](https://alexandru-burla.github.io/JSCalculator/)
+You can try it at: [https://alxbrla.github.io/calculatorJS/](https://alxbrla.github.io/calculatorJS/)
